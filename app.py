@@ -15,10 +15,10 @@ st.set_page_config(page_icon="🌱")
 
 def main():
     st.write("""
-         # Image Classification
+         # Plant Seedling Classification
          """
          )
-    file = st.file_uploader("Upload the image to be classified U0001F447", type=["jpg", "png"])
+    file = st.file_uploader("Upload your plant image to be classified", type=["jpg", "png"])
     st.set_option('deprecation.showfileUploaderEncoding', False)
     
     if file is None:
