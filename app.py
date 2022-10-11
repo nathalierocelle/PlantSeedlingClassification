@@ -3,6 +3,7 @@ import cv2
 from PIL import Image
 import numpy as np
 import joblib
+from tensorflow import keras
 from preprocessing_predictions import preprocess_data,prediction
 
 model = joblib.load(r'cnn_model_3.pkl')
