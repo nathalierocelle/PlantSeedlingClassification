@@ -22,16 +22,17 @@ def main():
     st.set_option('deprecation.showfileUploaderEncoding', False)
     
     if file is None:
-    st.text("Please upload an image file")
+        st.text("Please upload an image file")
     else:
-    image = Image.open(file)
-    st.image(image, use_column_width=True)
+        image = Image.open(file)
+        st.image(image, use_column_width=True)
     
     img = preprocess_data(file)
     image_class, score = prediction(model,img,labels)
+    
     st.write("The image is classified as",image_class)
     st.write("The similarity score is approximately",score)
-    print("The image is classified as ",image_class, "with a similarity score of",score)
+    #print("The image is classified as ",image_class, "with a similarity score of",score)
            
 
 if __name__ == '__main__':
