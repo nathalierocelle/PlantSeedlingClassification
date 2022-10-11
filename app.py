@@ -12,12 +12,13 @@ labels = ['Black-grass','Charlock','Cleavers','Common Chickweed','Common wheat',
           'Small-flowered Cranesbill','Sugar beet']
 
 st.set_page_config(page_icon="🌱")
+st.image('Banner.jpg')
 
 def main():
-    st.write("""
-         # Plant Seedling Classification
-         """
-         )
+    st.sidebar.markdown("<h2>About the app</h2>", unsafe_allow_html=True)
+    st.sidebar.write("""
+            The app aims to classify the seedling type of your plant
+             """)
     file = st.file_uploader("Upload your plant image to be classified", type=["jpg", "png"])
     st.set_option('deprecation.showfileUploaderEncoding', False)
     
