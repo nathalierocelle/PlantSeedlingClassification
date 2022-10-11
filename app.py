@@ -7,6 +7,9 @@ import joblib
 from preprocessing_predictions import preprocess_data,prediction
 
 model = joblib.load(r'cnn_model_3.pkl')
+labels = ['Black-grass','Charlock','Cleavers','Common Chickweed','Common wheat',
+          'Fat Hen','Loose Silky-bent','Maize','Scentless Mayweed','Shepherd’s Purse',
+          'Small-flowered Cranesbill','Sugar beet']
 
 st.set_page_config(page_icon="🌱")
 
@@ -25,7 +28,7 @@ def main():
     st.image(image, use_column_width=True)
     
     img = preprocess_data(file)
-    image_class, score = prediction(img)
+    image_class, score = prediction(model,img,labels)
     st.write("The image is classified as",image_class)
     st.write("The similarity score is approximately",score)
     print("The image is classified as ",image_class, "with a similarity score of",score)
