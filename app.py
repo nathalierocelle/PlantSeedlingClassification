@@ -11,14 +11,33 @@ labels = ['Black-grass','Charlock','Cleavers','Common Chickweed','Common wheat',
           'Fat Hen','Loose Silky-bent','Maize','Scentless Mayweed','Shepherd’s Purse',
           'Small-flowered Cranesbill','Sugar beet']
 
+df = pd.DataFrame(['Black-grass',
+ 'Charlock',
+ 'Cleavers',
+ 'Common Chickweed',
+ 'Common wheat',
+ 'Fat Hen',
+ 'Loose Silky-bent',
+ 'Maize',
+ 'Scentless Mayweed',
+ 'Shepherd’s Purse',
+ 'Small-flowered Cranesbill',
+ 'Sugar beet'],columns=['Species'])
+
 st.set_page_config(page_icon="🌱")
 st.image('Banner.jpg')
 
 def main():
     st.sidebar.markdown("<h2>About the app</h2>", unsafe_allow_html=True)
     st.sidebar.write("""
-            The app aims to classify the seedling type of your plant
+            The app aims to determine the species of a seedling from an image.
              """)
+    st.sidebar.write("""
+            Disclaimer: As of today, the following are the types of plant seedlings that were
+            used in training the model: 
+             """)
+    st.sidebar.write(df) 
+    
     file = st.file_uploader("Upload your plant image to be classified", type=["jpg", "png"])
     st.set_option('deprecation.showfileUploaderEncoding', False)
     
