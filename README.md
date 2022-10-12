@@ -13,3 +13,5 @@ of Streamlit and Heroku
 
 Webapp link: https://plant-seedling-classification.herokuapp.com/
 
+![Snapshot of the webapp](output.gif.gif) 
+
