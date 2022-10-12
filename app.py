@@ -35,24 +35,24 @@ def main():
             The app aims to determine the species of a seedling from an image.
              """)
     st.sidebar.write("""
-            Disclaimer: As of today, the following are the types of plant seedlings that were
+            🌿Disclaimer: As of today, the following are the types of plant seedlings that were
             used in training the model: 
              """)
     st.sidebar.write(df) 
     
-    file = st.file_uploader("Upload your plant image to be classified", type=["jpg", "png"])
+    file = st.file_uploader(type=["jpg", "png"])
     st.set_option('deprecation.showfileUploaderEncoding', False)
     
     if file is None:
-        st.text("Please upload an image file")
+        st.text("🍂Please upload your plant image")
     else:
         image = Image.open(file)
         st.image(image, use_column_width=True)
-    
-        img = preprocess_data(image)
+        st.write("Your plant is classified as",file.getvalue())
+        img = preprocess_data(file.getvalue())
         image_class, score = prediction(model,img,labels)
     
-        st.write("The image is classified as",image_class)
+        st.write("Your plant is classified as",image_class)
         st.write("The similarity score is approximately",score)
     #print("The image is classified as ",image_class, "with a similarity score of",score)
            
