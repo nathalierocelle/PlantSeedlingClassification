@@ -1,10 +1,12 @@
 import streamlit as st
 import cv2
-from PIL import Image
+import pandas as pd
 import numpy as np
 import joblib
+from PIL import Image
 from tensorflow import keras
 from preprocessing_predictions import preprocess_data,prediction
+
 
 model = joblib.load(r'cnn_model_3.pkl')
 labels = ['Black-grass','Charlock','Cleavers','Common Chickweed','Common wheat',
