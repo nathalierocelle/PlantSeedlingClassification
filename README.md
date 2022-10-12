@@ -8,4 +8,8 @@ The image classifier model is build up using Convolutional Neural Network that c
 namely 'Black-grass','Charlock','Cleavers','Common Chickweed','Common wheat','Fat Hen','Loose Silky-bent','Maize',
 'Scentless Mayweed','Shepherd’s Purse','Small-flowered Cranesbill'and 'Sugar beet'.
 
-The model's performance was evaluated using accuracy and loss metrics
+The model's performance was evaluated using accuracy and loss metrics. The model is deployed as a web application thru the use
+of Streamlit and Heroku
+
+Webapp link: https://plant-seedling-classification.herokuapp.com/
+
