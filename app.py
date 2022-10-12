@@ -35,8 +35,8 @@ def main():
             The app aims to determine the species of a seedling from an image.
              """)
     st.sidebar.write("""
-            🌿Disclaimer: As of today, the following are the types of plant seedlings that were
-            used in training the model: 
+            🌿Disclaimer: As of today, the following are the types of plant seedlings that the 
+            model can classify: 
              """)
     st.sidebar.write(df) 
     
@@ -54,8 +54,8 @@ def main():
         image_class, score = prediction(model,img,labels)
     
         st.write("Your plant is classified as",image_class)
-        st.write("The similarity score is approximately",score)
-    #print("The image is classified as ",image_class, "with a similarity score of",score)
+        st.write("The similarity score is approximately",round(score,2))
+        #print("The image is classified as ",image_class, "with a similarity score of",score)
            
 
 if __name__ == '__main__':
