@@ -40,7 +40,7 @@ def main():
              """)
     st.sidebar.write(df) 
     
-    file = st.file_uploader(type=["jpg", "png"])
+    file = st.file_uploader('Upload image in jpg or png format',type=["jpg", "png"])
     st.set_option('deprecation.showfileUploaderEncoding', False)
     
     if file is None:
