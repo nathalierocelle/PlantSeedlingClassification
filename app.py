@@ -40,7 +40,7 @@ def main():
              """)
     st.sidebar.write(df) 
     
-    file = st.file_uploader('Upload image in jpg or png format',type=["jpg", "png"])
+    file = st.file_uploader('Upload your image',type=["jpg", "png"])
     st.set_option('deprecation.showfileUploaderEncoding', False)
     
     if file is None:
@@ -48,8 +48,9 @@ def main():
     else:
         image = Image.open(file)
         st.image(image, use_column_width=True)
-        st.write("Your plant is classified as",file.getvalue())
-        img = preprocess_data(file.getvalue())
+        image = image.save("img.jpg")
+        
+        img = preprocess_data("img.jpg")
         image_class, score = prediction(model,img,labels)
     
         st.write("Your plant is classified as",image_class)
